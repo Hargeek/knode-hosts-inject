@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  labels:
+    app: knode-hosts-inject
+    app.kubernetes.io/instance: knode-hosts-inject
+    app.kubernetes.io/name: knode-hosts-inject
+  name: knode-hosts-inject
+  namespace: kube-system
+spec:
+  selector:
+    matchLabels:
+      app: knode-hosts-inject
+      app.kubernetes.io/instance: knode-hosts-inject
+      app.kubernetes.io/name: knode-hosts-inject
+  template:
+    metadata:
+      labels:
+        app: knode-hosts-inject
+        app.kubernetes.io/instance: knode-hosts-inject
+        app.kubernetes.io/name: knode-hosts-inject
+    spec:
+      containers:
+      - name: knode-hosts-inject
+        env:
+        - name: KUBE_NODE_HOSTS_PATH
+          value: /etc/kube-node/hosts
+        image: registry.cn-beijing.aliyuncs.com/ssgeek/knode-hosts-jnject:v0.0.1
+        imagePullPolicy: IfNotPresent
+        resources:
+          limits:
+            cpu: 500m
+            memory: 256Mi
+          requests:
+            cpu: 50m
+            memory: 52Mi
+        volumeMounts:
+        - mountPath: /etc/kube-node/hosts
+          name: kube-node-hosts
+      enableServiceLinks: false
+      serviceAccountName: knode-hosts-inject
+      tolerations:
+      - key: "key"
+        operator: "Exists"
+      volumes:
+      - hostPath:
+          path: /etc/hosts
+          type: ""
+        name: kube-node-hosts

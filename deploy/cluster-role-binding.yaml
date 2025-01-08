@@ -1,0 +1,12 @@
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: knode-hosts-inject
+subjects:
+- kind: ServiceAccount
+  name: knode-hosts-inject
+  namespace: kube-system
+roleRef:
+  kind: ClusterRole
+  name: knode-hosts-inject
+  apiGroup: rbac.authorization.k8s.io
