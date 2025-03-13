@@ -3,9 +3,9 @@ English | [简体中文](./README-cn.md)
 # knode-hosts-inject
 
 ![Go Version](https://img.shields.io/badge/Go-%3E%3D%201.22-%23007d9c)
-[![GoDoc](https://godoc.org/github.com/hargeek/gin-auto-redoc?status.svg)](https://pkg.go.dev/github.com/hargeek/gin-auto-redoc)
-[![Contributors](https://img.shields.io/github/contributors/hargeek/gin-auto-redoc)](https://github.com/hargeek/gin-auto-redoc/graphs/contributors)
-[![License](https://img.shields.io/github/license/hargeek/gin-auto-redoc)](./LICENSE)
+[![GoDoc](https://godoc.org/github.com/hargeek/knode-hosts-inject?status.svg)](https://pkg.go.dev/github.com/hargeek/knode-hosts-inject)
+[![Contributors](https://img.shields.io/github/contributors/hargeek/knode-hosts-inject)](https://github.com/hargeek/knode-hosts-inject/graphs/contributors)
+[![License](https://img.shields.io/github/license/hargeek/knode-hosts-inject)](./LICENSE)
 
 ## What is knode-hosts-inject
 
